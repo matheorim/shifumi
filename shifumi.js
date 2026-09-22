@@ -1,6 +1,7 @@
 const bouton_pierre = document.getElementById('Pierre')
 const bouton_feuille = document.getElementById('Feuille')
 const bouton_ciseaux = document.getElementById('Ciseaux')
+const bouton_reset = document.getElementById('reset')
 
 const zoneResultat = document.getElementById('resultat')
 const zoneChoixJoueur = document.getElementById('VotreChoix')
@@ -44,9 +45,13 @@ function jouer(choix_joueur) {
     console.log('Le bot a joué ' + choix_bot)
 }
 
+bouton_reset.addEventListener('click', () => {
+    score.win = 0
+    score.draw = 0
+    score.lose = 0
 
-
-
-
-//extention : lighthouse / wave accessibility 
-//minifier
+    zoneResultat.textContent = 'Choisissez Pierre, Feuille ou Ciseaux !'
+    zoneChoixJoueur.textContent = 'Votre choix : '
+    zoneChoixBot.textContent = 'Choix du bot : '
+    zoneScore.textContent ='Win: 0 | Draw: 0 | Lose: 0'
+})
